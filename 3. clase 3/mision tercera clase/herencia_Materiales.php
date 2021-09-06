@@ -1,7 +1,7 @@
 <?php
-include 'herencia%20Materiales.php';
+include 'herenciaMateriales.php';
 
-class Materiales extends Biblioteca
+class Materiales
 {
     private $tipoMaterial;
     private $codigo;
