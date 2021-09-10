@@ -9,7 +9,7 @@ try {
     $conexion=new PDO($dsn,$username,$password);
     $statement=$conexion->prepare("select * from aprendiz");
     $statement->execute();
-
+    
 } catch (PDOException $ob) {
     echo $ob->getMessage();
 }   
@@ -25,5 +25,16 @@ foreach ($statement as $key) {
     echo 'Formacion: ' . $key['formacion']. ' - ';
     echo 'Genero: ' . $key['sexo']. '</br>';
 } 
+
+
+echo '----------------------------------------------------------------------- </br>';
+
+$statement -> execute();
+while ($key = $statement->fetch()) {
+    echo 'Nombre: ' . $key['nombre']. ' - ';
+    echo 'Documento: ' . $key['documento']. ' - ';
+    echo 'Formacion: ' . $key['formacion']. ' - ';
+    echo 'Genero: ' . $key['sexo']. '</br>';
+}
 
 ?>
